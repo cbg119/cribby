@@ -6,7 +6,7 @@
 /*   By: cbagdon <cbagdon@student.42.us.org>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/13 21:18:18 by cbagdon           #+#    #+#             */
-/*   Updated: 2019/05/13 21:53:53 by cbagdon          ###   ########.fr       */
+/*   Updated: 2019/05/14 17:55:17 by cbagdon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ static t_row	*new_row(char *line)
 
 	new = (t_row *)malloc(sizeof(t_row));
 	new->prev = NULL;
-	new->line = line;
+	new->line = ft_strdup(line);
 	new->length = ft_strlen(line);
 	new->next = NULL;
 	return (new);
@@ -41,4 +41,18 @@ void			add_row(char *line)
 		to_add->prev = curr->next;
 	}
 	g_config.row_count++;
+}
+
+void			load_file(char *filename)
+{
+	int		fd;
+	int		read;
+	char	*line;
+
+	fd = open(filename, O_RDONLY);
+	while ((read = get_next_line(fd, &line)) > 0)
+	{
+		add_row(line);
+		free(line);
+	}
 }

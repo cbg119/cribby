@@ -6,7 +6,7 @@
 /*   By: cbagdon <cbagdon@student.42.us.org>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/13 14:53:41 by cbagdon           #+#    #+#             */
-/*   Updated: 2019/05/13 19:21:04 by cbagdon          ###   ########.fr       */
+/*   Updated: 2019/05/14 16:31:09 by cbagdon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,14 +29,13 @@ int				term_check(void)
 
 void			enable_raw_terminal(void)
 {
-
 	tcgetattr(STDERR_FILENO, &g_config.terminal.old_terminal);
 	tcgetattr(STDERR_FILENO, &g_config.terminal.new_terminal);
 	g_config.terminal.new_terminal.c_lflag &= ~(ICANON | ECHO);
-	tcsetattr(STDERR_FILENO, TCSANOW, &g_config.terminal.new_terminal);
+	tcsetattr(STDERR_FILENO, TCSAFLUSH, &g_config.terminal.new_terminal);
 }
 
 void			reset_default_terminal(void)
 {
-	tcsetattr(STDERR_FILENO, TCSANOW, &g_config.terminal.old_terminal);
+	tcsetattr(STDERR_FILENO, TCSAFLUSH, &g_config.terminal.old_terminal);
 }

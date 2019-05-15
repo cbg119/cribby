@@ -6,13 +6,13 @@
 /*   By: cbagdon <cbagdon@student.42.us.org>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/13 15:18:32 by cbagdon           #+#    #+#             */
-/*   Updated: 2019/05/13 16:53:11 by cbagdon          ###   ########.fr       */
+/*   Updated: 2019/05/14 16:30:51 by cbagdon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "utils.h"
 
-unsigned long ft_getch(void)
+unsigned long	ft_getch(void)
 {
 	unsigned long		key;
 

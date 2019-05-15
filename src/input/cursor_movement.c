@@ -6,7 +6,7 @@
 /*   By: cbagdon <cbagdon@student.42.us.org>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/13 20:27:54 by cbagdon           #+#    #+#             */
-/*   Updated: 2019/05/13 20:46:33 by cbagdon          ###   ########.fr       */
+/*   Updated: 2019/05/14 16:55:57 by cbagdon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,27 @@
 
 static void			match_movement_key(unsigned long key)
 {
-	if (key == K_UP && g_config.cursor.row > 1)
-		g_config.cursor.row--;
-	else if (key == K_DOWN && g_config.cursor.row < g_config.window.ws_row)
-		g_config.cursor.row++;
+	if (key == K_UP && g_config.cursor.row + g_config.row_offset > 1)
+	{
+		if (g_config.cursor.row == 1)
+		{
+			g_config.row_offset--;
+			refresh_screen();
+		}
+		else
+			g_config.cursor.row--;
+	}
+	else if (key == K_DOWN &&
+	g_config.cursor.row + g_config.row_offset < g_config.row_count)
+	{
+		if (g_config.cursor.row == g_config.window.ws_row)
+		{
+			g_config.row_offset++;
+			refresh_screen();
+		}
+		else
+			g_config.cursor.row++;
+	}
 	else if (key == K_LEFT && g_config.cursor.col > 1)
 		g_config.cursor.col--;
 	else if (key == K_RIGHT && g_config.cursor.col < g_config.window.ws_col)
@@ -35,6 +52,8 @@ void				input_loop(void)
 		key = ft_getch();
 		if (key == K_END)
 			break ;
+		else if (key == K_ENTER)
+			refresh_screen();
 		else
 			match_movement_key(key);
 	}

@@ -11,6 +11,6 @@ AKA "The Norme" (https://cdn.intra.42.fr/pdf/pdf/960/norme.en.pdf).
 This means (virtually) no standard library functions, aside from the ones
 I have already recreated in my libft. This project will also use the termcap
 library, which is considered low-level enough to be allowed to use, at least
-in similar projects.
+in similar projects. Yes, that means no ncurses. Yeeeeep.
 
 More info to come.

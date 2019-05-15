@@ -6,7 +6,7 @@
 /*   By: cbagdon <cbagdon@student.42.us.org>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/13 20:27:54 by cbagdon           #+#    #+#             */
-/*   Updated: 2019/05/14 16:55:57 by cbagdon          ###   ########.fr       */
+/*   Updated: 2019/05/14 18:13:01 by cbagdon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,10 +50,27 @@ void				input_loop(void)
 	while (1)
 	{
 		key = ft_getch();
-		if (key == K_END)
+		if (key == 'q' || key == 'Q')
 			break ;
-		else if (key == K_ENTER)
+		else if (key == K_HOME)
+		{
+			g_config.cursor.row = 1;
+			g_config.row_offset = 0;
 			refresh_screen();
+			move_cursor();
+		}
+		else if (key == K_END)
+		{
+			if (g_config.row_count <= g_config.window.ws_row)
+				g_config.cursor.row = g_config.row_count;
+			else
+			{
+				g_config.cursor.row = g_config.window.ws_row;
+				g_config.row_offset = g_config.row_count % g_config.window.ws_row;
+			}
+			refresh_screen();
+			move_cursor();
+		}
 		else
 			match_movement_key(key);
 	}

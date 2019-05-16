@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cbagdon <cbagdon@student.42.fr>            +#+  +:+       +#+        */
+/*   By: cbagdon <cbagdon@student.42.us.org>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/13 17:58:47 by cbagdon           #+#    #+#             */
-/*   Updated: 2019/04/05 12:58:56 by cbagdon          ###   ########.fr       */
+/*   Updated: 2019/05/15 22:51:41 by cbagdon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -160,5 +160,6 @@ char				*ft_strjoinf(char *s1, char *s2);
 char				*ft_pathjoin(char *s1, char *s2);
 void				ft_freestrarray(char **str);
 char				*ft_itoa_base(int number, int base);
+char				*ft_strnjoin(char const *s1, char const *s2, int n);
 
 #endif

@@ -1,24 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   input.h                                            :+:      :+:    :+:   */
+/*   ft_strnjoin.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cbagdon <cbagdon@student.42.us.org>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/05/13 20:26:30 by cbagdon           #+#    #+#             */
-/*   Updated: 2019/05/15 21:45:54 by cbagdon          ###   ########.fr       */
+/*   Created: 2019/05/15 21:27:30 by cbagdon           #+#    #+#             */
+/*   Updated: 2019/05/15 22:53:01 by cbagdon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef INPUT_H
-# define INPUT_H
+#include "../includes/libft.h"
 
-# include "cribby.h"
+char	*ft_strnjoin(char const *s1, char const *s2, int n)
+{
+	int				i;
+	int				j;
+	unsigned int	len;
+	char			*string;
 
-void				input_loop(void);
-void				move_up(void);
-void				move_down(void);
-void				move_left(void);
-void				move_right(void);
-
-#endif
+	i = -1;
+	j = 0;
+	len = ft_strlen(s1) + ft_strlen(s2);
+	string = ft_strnew(len);
+	while (s1[++i])
+		string[i] = s1[i];
+	while (j < n && s2[j])
+		string[i++] = s2[j++];
+	return (string);
+}

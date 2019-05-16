@@ -6,7 +6,7 @@
 #    By: cbagdon <cbagdon@student.42.us.org>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/04/26 21:10:35 by cbagdon           #+#    #+#              #
-#    Updated: 2019/05/13 22:02:06 by cbagdon          ###   ########.fr        #
+#    Updated: 2019/05/15 21:39:30 by cbagdon          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -26,7 +26,8 @@ DRAW = draw_rows.c \
 
 WINDOW = window_update.c
 
-INPUT = cursor_movement.c
+INPUT = cursor_movement.c \
+		cursor_logic.c
 
 FILE = row.c
 

@@ -6,7 +6,7 @@
 /*   By: cbagdon <cbagdon@student.42.us.org>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/26 21:16:46 by cbagdon           #+#    #+#             */
-/*   Updated: 2019/05/14 17:55:15 by cbagdon          ###   ########.fr       */
+/*   Updated: 2019/05/15 21:39:07 by cbagdon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,7 @@ static void		reset(void)
 
 static void		init_editor(void)
 {
+	g_config.col_offset = 0;
 	g_config.row_offset = 0;
 	g_config.row = NULL;
 	g_config.row_count = 0;

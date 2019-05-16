@@ -6,7 +6,7 @@
 #    By: cbagdon <cbagdon@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/02/11 16:50:18 by cbagdon           #+#    #+#              #
-#    Updated: 2019/04/05 12:58:40 by cbagdon          ###   ########.fr        #
+#    Updated: 2019/05/15 21:28:21 by cbagdon          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -72,7 +72,8 @@ STR_SRCS = ft_strcat.c \
 			ft_strjoinchf.c \
 			ft_strjoinf.c \
 			ft_pathjoin.c \
-			ft_freestrarray.c
+			ft_freestrarray.c \
+			ft_strnjoin.c
 
 IS_SRCS = ft_isalpha.c \
 			ft_isdigit.c \

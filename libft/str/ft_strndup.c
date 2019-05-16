@@ -6,7 +6,7 @@
 /*   By: cbagdon <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/01 14:01:04 by cbagdon           #+#    #+#             */
-/*   Updated: 2019/03/01 14:01:07 by cbagdon          ###   ########.fr       */
+/*   Updated: 2019/05/15 22:27:42 by cbagdon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ char	*ft_strndup(const char *s1, int n)
 	length = ft_strlen(s1);
 	if (n > length)
 		n = length;
-	if (!(result = (char *)malloc(sizeof(char) * n + 1)))
+	if (!(result = (char *)malloc(sizeof(char) * (n + 1))))
 		return (NULL);
 	i = 0;
 	while (s1[i] && i < n)

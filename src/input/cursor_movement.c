@@ -6,7 +6,7 @@
 /*   By: cbagdon <cbagdon@student.42.us.org>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/13 20:27:54 by cbagdon           #+#    #+#             */
-/*   Updated: 2019/05/14 18:13:01 by cbagdon          ###   ########.fr       */
+/*   Updated: 2019/05/15 23:31:57 by cbagdon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,31 +14,14 @@
 
 static void			match_movement_key(unsigned long key)
 {
-	if (key == K_UP && g_config.cursor.row + g_config.row_offset > 1)
-	{
-		if (g_config.cursor.row == 1)
-		{
-			g_config.row_offset--;
-			refresh_screen();
-		}
-		else
-			g_config.cursor.row--;
-	}
-	else if (key == K_DOWN &&
-	g_config.cursor.row + g_config.row_offset < g_config.row_count)
-	{
-		if (g_config.cursor.row == g_config.window.ws_row)
-		{
-			g_config.row_offset++;
-			refresh_screen();
-		}
-		else
-			g_config.cursor.row++;
-	}
-	else if (key == K_LEFT && g_config.cursor.col > 1)
-		g_config.cursor.col--;
-	else if (key == K_RIGHT && g_config.cursor.col < g_config.window.ws_col)
-		g_config.cursor.col++;
+	if (key == K_UP)
+		move_up();
+	else if (key == K_DOWN)
+		move_down();
+	else if (key == K_LEFT)
+		move_left();
+	else if (key == K_RIGHT)
+		move_right();
 	move_cursor();
 }
 

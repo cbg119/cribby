@@ -6,7 +6,7 @@
 /*   By: cbagdon <cbagdon@student.42.us.org>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/13 14:26:03 by cbagdon           #+#    #+#             */
-/*   Updated: 2019/05/14 14:41:06 by cbagdon          ###   ########.fr       */
+/*   Updated: 2019/05/15 21:38:58 by cbagdon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,6 +64,7 @@ typedef struct				s_terminal
 
 typedef struct				s_config
 {
+	int						col_offset;
 	int						row_offset;
 	t_row					*row;
 	int						row_count;
